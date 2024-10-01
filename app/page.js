@@ -1,16 +1,13 @@
 "use client";
 
-import Header from "@/components/header";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Projects from "@/components/projects";
-import Contact from "@/components/Contact";
-import Hero from "@/components/hero";
+import Header from "../components/header";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import Projects from "../components/projects";
+import Contact from "../components/Contact";
+import Hero from "../components/hero";
 
 export default function Home() {
- 
-
-
   return (
     <main className=" bg-[#fbf1e7] text-gray-950">
       <div className="min-h-screen">
