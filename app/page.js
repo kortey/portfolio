@@ -1,10 +1,10 @@
 "use client";
 
 import Header from "../components/header";
-import About from "../components/About";
-import Skills from "../components/Skills";
+import About from "../components/about";
+import Skills from "../components/skills";
 import Projects from "../components/projects";
-import Contact from "../components/Contact";
+import Contact from "../components/contact";
 import Hero from "../components/hero";
 
 export default function Home() {
