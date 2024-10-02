@@ -45,7 +45,7 @@ function Hero() {
     >
       <h2 className="text-5xl font-bold mb-5 ga firstText">HI THERE</h2>
       <h2 className="text-3xl secontText">my name is RICHARD and I am a </h2>
-      <h1 className="text-[80px] md:text-[100px] lg:text-[100px] text-slate-200 font-bold mb-0 z-20 relative thirdText">
+      <h1 className="text-[80px] md:text-[100px] lg:text-[100px] text-slate-200 md:text-black text-center font-bold mb-0 z-20 relative thirdText">
         Full Stack
       </h1>
 
