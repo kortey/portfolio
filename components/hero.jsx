@@ -47,7 +47,7 @@ function Hero() {
       <h2 className="text-3xl secontText sm:pt-2">
         my name is RICHARD and I am a
       </h2>
-      <h1 className="text-[80px]  text-xs  md:text-[100px] lg:text-[100px] text-slate-200 font-bold mb-0 z-20 relative thirdText">
+      <h1 className="text-[80px]  text-sm  md:text-[100px] lg:text-[100px] text-slate-200 font-bold mb-0 z-20 relative thirdText">
         Full Stack
       </h1>
 
@@ -59,7 +59,7 @@ function Hero() {
         className="richard w-[350px] h-[350px] top-[200px] lg:w-[430px] lg:h-[430px] 2xl:h-[550px] 2xl:w-[550px]  absolute z-0  "
       />
 
-      <h1 className="lastText text-[80px] md:text-[150px] lg:text-[250px] font-bold  md:mt-[-120px]  text-outline  ">
+      <h1 className="lastText text-[80px] md:text-[150px] lg:text-[250px] font-bold  md:mt-[-120px]  text-outline overflow-hidden ">
         Developer
       </h1>
     </div>
