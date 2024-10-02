@@ -41,11 +41,13 @@ function Hero() {
   return (
     <div
       ref={heroRef}
-      className=" w-full flex flex-col items-center mt-10 pb-50 "
+      className=" w-full flex flex-col items-center mt-10 pb-50 sm:mb-30 "
     >
       <h2 className="text-5xl font-bold mb-5 ga firstText">HI THERE</h2>
-      <h2 className="text-3xl secontText">my name is RICHARD and I am a </h2>
-      <h1 className="text-[80px] md:text-[100px] lg:text-[100px] text-slate-200 font-bold mb-0 z-20 relative thirdText">
+      <h2 className="text-3xl secontText sm:pt-2">
+        my name is RICHARD and I am a
+      </h2>
+      <h1 className="text-[80px]  sm:text-[50px]  md:text-[100px] lg:text-[100px] text-slate-200 font-bold mb-0 z-20 relative thirdText">
         Full Stack
       </h1>
 

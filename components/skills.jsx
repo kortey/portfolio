@@ -15,7 +15,7 @@ export default function Skills() {
 
   return (
     <section className="min-h-screen flex  flex-col items-center gap-10 lg:flex-row lg:gap-20 justify-center">
-      <h3 className="text-[50px] lg:text-[100px] text-slate-200 font-bold mb-5">
+      <h3 className="text-[50px]  lg:text-[100px] text-slate-200 font-bold mb-5">
         SKILLS
       </h3>
       <div className="flex  flex-row flex-wrap  mx-10 gap-5  filter-blur">
