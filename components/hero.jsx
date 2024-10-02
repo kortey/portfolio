@@ -47,7 +47,7 @@ function Hero() {
       <h2 className="text-3xl secontText sm:pt-2">
         my name is RICHARD and I am a
       </h2>
-      <h1 className="text-[80px]  sm:text-[50px]  md:text-[100px] lg:text-[100px] text-slate-200 font-bold mb-0 z-20 relative thirdText">
+      <h1 className="text-[80px]  text-xs  md:text-[100px] lg:text-[100px] text-slate-200 font-bold mb-0 z-20 relative thirdText">
         Full Stack
       </h1>
 
