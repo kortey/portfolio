@@ -13,7 +13,7 @@ export default function Home() {
       <div className="min-h-screen">
         <Header />
         <Hero />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#fbf1e7] to-transparent z-1000"></div>
+
       </div>
       <Projects />
       <About />

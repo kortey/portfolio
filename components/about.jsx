@@ -1,30 +1,77 @@
-export default function About() {
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+const About = () => {
   return (
-    <section className=" flex flex-col min-h-screen bg-white mt-[-50px]">
-      <div className=" flex flex-col  items-center justify-center lg:flex-row m-5 gap-5">
-        <h3 className="text-5xl font-bold mb-5 ga lg:text-[100px] xl:text-[150px]">
-          ABOUT ME
-        </h3>
-        <div>
-          <p className=" lg:text-3xl  ">
-            Hi, I’m Richard Kortey, a passionate web developer based in Ghana .
-            I specialize in creating dynamic and responsive web applications
-            that deliver exceptional user experiences. With a strong foundation
-            in front-end technologies like React, JavaScript, HTML, and CSS,
-            along with experience in back-end frameworks and databases like
-            Node.js and MySQL, I bring full-stack development skills to the
-            table. Driven by curiosity and a love for problem-solving, I’m
-            constantly learning and refining my skills to stay up-to-date with
-            the latest industry trends and best practices. Whether it's building
-            interactive user interfaces or designing scalable backend systems, I
-            enjoy turning complex problems into simple, beautiful solutions.
-            When I’m not coding, you can find me exploring new technologies,
-            contributing to open-source projects, or sharing my knowledge with
-            the developer community. Let’s connect and create something amazing
-            together!
-          </p>
-        </div>
+    <section id="about" className="py-20 bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background to-transparent" />
+      <div className="absolute inset-0">
+        <div className="absolute top-40 -right-40 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 -left-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">
+              About Me
+            </h2>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-8" />
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="gradient-border p-1 rounded-2xl">
+              <div className="glass-effect rounded-2xl overflow-hidden">
+                <Image
+                  src="/Richardkortey.png"
+                  alt="Richard Kortey"
+                  width={400}
+                  height={400}
+                  className="w-full hover-lift"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <p className="text-lg text-muted-foreground">
+                Hello! I'm Richard, a passionate Full Stack Developer based in Ghana. 
+                I love creating beautiful and functional web applications that solve 
+                real-world problems.
+              </p>
+
+              <p className="text-lg text-muted-foreground">
+                With expertise in modern web technologies and a keen eye for design, 
+                I strive to build applications that not only work flawlessly but 
+                also provide an exceptional user experience.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="glass-effect p-4 rounded-lg hover-lift">
+                  <h3 className="font-semibold mb-2">Frontend</h3>
+                  <p className="text-sm text-muted-foreground">
+                    React, Next.js, Tailwind CSS
+                  </p>
+                </div>
+                <div className="glass-effect p-4 rounded-lg hover-lift">
+                  <h3 className="font-semibold mb-2">Backend</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Node.js, Express, MongoDB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
-}
+};
+
+export default About;

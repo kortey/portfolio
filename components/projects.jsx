@@ -1,113 +1,114 @@
-"use client";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+const projects = [
+  {
+    title: "youtube clone",
+    description: "a youtube clone with React and material-UI",
+    image: "/youtubesearch.png",
+    tags: ["Next.js", "Stripe", "Tailwind CSS"],
+    liveLink: "https://clone-e5403.web.app/",
+   
+  },
+  {
+    title: "fitness langing page",
+    description: "A beautiful and responssive landing page for a fitness company",
+    image: "/fitnessApp.png",
+    tags: ["React", "Material-UI"],
+    liveLink: "https://workout-landingpage.web.app/",
+  },
+  {
+    title: "weight loss Landing page.",
+    description: "A beautiful and responssive landing page for a weightloss company company.",
+    image: "/fitness.png",
+    tags: ["Next.js", "tailwind"],
+    liveLink: "https://fitness-app-7860d.web.app/",
+   
+  },
+];
 
-export default function Projects() {
-  const projectRef = useRef(null);
-
-  useGSAP(
-    () => {
-      const tl = gsap.timeline();
-      tl.from(".firstText", {
-        y: 200,
-        opacity: 0,
-        duration: 2,
-        scrollTrigger: {
-          trigger: ".firstText",
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-        },
-      });
-      tl.from(".projects", {
-        y: 200,
-        opacity: 0,
-        duration: 3,
-        scrollTrigger: {
-          trigger: ".firstText",
-          start: "top center",
-          end: "bottom bottom",
-          stagger: 1,
-          scrub: true,
-        },
-      });
-    },
-    { scope: projectRef }
-  );
-
-  const projects = [
-    {
-      id: 1,
-      title: "A fitness Landing page",
-      description:
-        "this landing page design is inspired by an already existing design i found on dribbble. I is created with reactjs and tailwindcss",
-      image: "/fitness1.png",
-      url: "https://fitness-app-7860d.web.app/",
-    },
-    {
-      id: 2,
-      title: "A youtube alternativ",
-      description:
-        "this web app is an app built with reactjs. this integrares the youtube v3 api from rapid api.all infomation on this is is realtime",
-      image: "/youtubesearch.png",
-      url: "https://clone-e5403.web.app/",
-    },
-    {
-      id: 3,
-      title: "Workout Landing Page",
-      description:
-        "this landing page is one with beautiful design. It is buit with rectjs and follow best reactjs prctices.",
-      image: "/fitnessapp.png",
-      url: "https://workout-landingpage.web.app/",
-    },
-  ];
-
+const Projects = () => {
   return (
-    <section
-      ref={projectRef}
-      className="min-h-screen flex py-20 items-center flex-col"
-    >
-      <h3 className="firstText text-[80px] md:text-[150px] lg:text-[200px] text-slate-900 font-bold">
-        MY WORK
-      </h3>
-      <div className="container w-full md:w-[80%] bg-white rounded-lg border-white border-2 p-10 ">
-        {projects.map((project) => {
-          return (
-            <div
-              key={project.id}
-              className="projects mt-10 p-5 border border-blue-500 bg-gradient-to-r from-black via-blue-800 to-purple-600 rounded-lg flex flex-col  items-center md:flex-row "
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={400}
-                className="rounded-lg"
-              />
-              <div className="px-10 py-10 flex flex-col gap-8">
-                <h5 className="font-bold text-3xl mb-5 text-slate-200">
-                  {project.title}
-                </h5>
-                <p className="text-slate-300">{project.description} </p>
+    <section id="projects" className="py-20 bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0">
+        <div className="absolute top-40 -right-40 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 -left-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl" />
+      </div>
 
-                <Link href={project.url}>
-                  <button className="mt-4 px-5 py-3 bg-blue-400 rounded-lg hover:bg-blue-300 transition-all transition-0.1">
-                    View Site
-                  </button>
-                </Link>
-              </div>
-            </div>
-          );
-        })}
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">
+              Featured Projects
+            </h2>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-8" />
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Here are some of my recent projects that showcase my skills and experience
+              in web development.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="gradient-border p-1 rounded-xl">
+                  <div className="glass-effect rounded-xl overflow-hidden">
+                    <div className="relative h-48 mb-4">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                      <p className="text-muted-foreground mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex gap-4">
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-primary hover:text-primary/80 transition-colors"
+                        >
+                          Live Demo →
+                        </a>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
-}
+};
+
+export default Projects;
